@@ -1,0 +1,43 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: todo
+  name: my
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo
+  template:
+    metadata:
+      labels:
+        app: todo
+    spec:
+      containers:
+      - name: todo
+        image: docker.io/burrsutter/todo:1.0.0
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 8080
+        resources:
+          requests: 
+            memory: "40Mi" 
+            cpu: "100m" 
+          limits:
+            memory: "80Mi"
+            cpu: "300m"
+        livenessProbe:
+          httpGet:
+              port: 8080
+              path: /
+          initialDelaySeconds: 1
+          periodSeconds: 5
+          timeoutSeconds: 2          
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 1
+          periodSeconds: 3
+
