@@ -1,3 +1,3 @@
 #!/bin/bash
 
-kubectl scale --replicas=3 deployment/my
+kubectl scale --replicas=2 deployment/my
