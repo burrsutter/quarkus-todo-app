@@ -4,7 +4,7 @@
 
 docker login docker.io
 
-docker tag $1 docker.io/burrsutter/todo:3.0.0
+docker tag $1 docker.io/burrsutter/todo:6.0.0
 
-docker push docker.io/burrsutter/todo:3.0.0
+docker push docker.io/burrsutter/todo:6.0.0
 

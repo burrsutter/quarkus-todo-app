@@ -18,7 +18,7 @@ public class PodHostResource {
 
   @GET
   public String getInformation() {
-    return "Hostv3: " + HOSTNAME + " " + count++;
+    return "Host: " + HOSTNAME + " " + count++;
   } 
   
 }
