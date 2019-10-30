@@ -15,6 +15,12 @@ import java.util.List;
 @Consumes("application/json")
 public class TodoResource {
 
+  private String HOSTNAME =
+  System.getenv().getOrDefault("HOSTNAME", "unknown");
+
+  private int count = 0;
+
+
     @OPTIONS
     public Response opt() {
         return Response.ok().build();
@@ -72,6 +78,12 @@ public class TodoResource {
         }
         entity.delete();
         return Response.noContent().build();
+    }
+
+    @GET
+    @Path("/podhost")
+    public String podID() {
+      return HOSTNAME + " " + count++;
     }
 
 }

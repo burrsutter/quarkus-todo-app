@@ -16,8 +16,7 @@ spec:
     spec:
       containers:
       - name: todo
-        image: docker.io/burrsutter/todo:6.0.0
-        imagePullPolicy: Always
+        image: quay.io/burrsutter/todo:9.0.0
         env:
         - name: QUARKUS_DATASOURCE_URL
           value: jdbc:postgresql://postgres:5432/postgresdb
@@ -34,19 +33,12 @@ spec:
             memory: "40Mi" 
             cpu: "100m" 
           limits:
-            memory: "80Mi"
+            memory: "60Mi"
             cpu: "300m"
-        livenessProbe:
-          httpGet:
-              port: 8080
-              path: /
-          initialDelaySeconds: 1
-          periodSeconds: 5
-          timeoutSeconds: 2          
         readinessProbe:
           httpGet:
-            path: /
             port: 8080
-          initialDelaySeconds: 1
+            path: /hello
+          initialDelaySeconds: 2
           periodSeconds: 3
 
