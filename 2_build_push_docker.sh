@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=8.0.0
+VERSION=schema
 
 docker login docker.io
 
