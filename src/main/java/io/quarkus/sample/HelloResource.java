@@ -10,7 +10,8 @@ import javax.ws.rs.Path;
 public class HelloResource {
   @GET
   public String sayhello() {
-    return "Привет";
+    // return "Привет";
+    return "Aloha";
   }
   
 }
