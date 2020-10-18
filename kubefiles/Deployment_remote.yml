@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: todo
-        image: quay.io/burrsutter/todo:9.0.0
+        image: quay.io/burrsutter/todo:1.0.0
         env:
         - name: QUARKUS_DATASOURCE_URL
           value: jdbc:postgresql://postgres:5432/postgresdb
