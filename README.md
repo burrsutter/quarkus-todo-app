@@ -13,6 +13,10 @@ http://localhost:5050
 
 
 
+## S2I (Topology +Add)
+
+https://access.redhat.com/documentation/en-us/red_hat_build_of_quarkus/1.3/html/deploying_quarkus_applications_on_red_hat_openshift_container_platform/proc-using-s2i-openshift-quarkus_quarkus-openshift
+
 
 
 
